@@ -1,0 +1,26 @@
+llm:
+  type: sncloud # Model type: can be 'sncloud' for SambaNova Cloud or 'sambastudio' for SambaStudio
+  temperature: 0.7 # Controls the randomness of the output (0.0 for deterministic, 1.0 for more random)
+  do_sample: true # Whether to use sampling; if false, uses greedy decoding
+  max_tokens_to_generate: 4000 # Maximum number of tokens to generate in the response
+  coe: true # Set as true if using the Sambastudio CoE (Center of Excellence) endpoint
+  select_expert: Meta-Llama-3.1-405B-Instruct # Specific model to use; relevant if using CoE or cloud model
+  top_p: 0.9 # Nucleus sampling parameter, controls diversity (0.9 is a good default)
+  frequency_penalty: 0.5 # Penalizes new tokens based on their frequency so far; lower means more repetition
+  presence_penalty: 0.5 # Penalizes new tokens based on whether they appear in the text so far; encourages diversity
+
+llama_vision:
+  #login: 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
+  #login: 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
+  # login: d9db09ab-2746-43de-9f8a-ad3526f1fc4e
+  login: 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
+  type: llama-3.2-90b-vision-preview
+  # type: Llama-3.2-90B-Vision-Instruct
+  temperature: 0.7
+  do_sample: true
+  max_tokens_to_generate: 2000
+  coe: 1.2
+  select_expert: false
+  top_p: 0.9
+  frequency_penalty: 0.5
+  presence_penalty: 0.3
